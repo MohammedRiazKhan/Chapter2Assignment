@@ -10,15 +10,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import static org.junit.Assert.*;
 
-public class ProfileTest {
+public class Profile2Test {
 
-    private CollectionsInterface myProfile;
+    private CollectionsInterface myProfile2;
 
     @Before
     public void setUp() throws Exception {
 
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        myProfile = (CollectionsInterface)ctx.getBean("allCollectionsAddOnly");
+        myProfile2 = (CollectionsInterface)ctx.getBean("allCollectionsStartingAt1");
 
     }
 
@@ -32,8 +32,8 @@ public class ProfileTest {
         String name1 = "Mohammed";
         String name2 = "Riaz";
 
-        myProfile.addToArrayList(name1);
-        myProfile.addToArrayList(name2);
+        myProfile2.addToArrayList(name1);
+        myProfile2.addToArrayList(name2);
 
         Assert.assertEquals("Adding to list", name1, name1);
         Assert.assertEquals("Adding to list", name2, name2);
@@ -47,9 +47,9 @@ public class ProfileTest {
         String qualification2 = "Diploma";
         String qualification3 = "Diploma";
 
-        myProfile.addToSet(qualification1);
-        myProfile.addToSet(qualification2);
-        myProfile.addToSet(qualification3);
+        myProfile2.addToSet(qualification1);
+        myProfile2.addToSet(qualification2);
+        myProfile2.addToSet(qualification3);
 
         Assert.assertNotSame("Unique Items in set", qualification1, qualification2);
         //Assert.assertNotSame("Unique items in Set only", qualification2, qualification3);
@@ -62,7 +62,7 @@ public class ProfileTest {
         String key = "Java";
         String val = null;
 
-        myProfile.addToMap(key, val);
+        myProfile2.addToMap(key, val);
 
         Assert.assertNotNull(val);//checks if there is a value along with the key
 
