@@ -17,8 +17,7 @@ public class ProfileTest {
     @Before
     public void setUp() throws Exception {
 
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        myProfile = (CollectionsInterface)ctx.getBean("allCollectionsAddOnly");
+       myProfile = new Profile();
 
     }
 
